@@ -35,12 +35,12 @@ class MainActivity : AppCompatActivity() {
         }
 
         val itemsForRecycler = listOf(
-            NavigationItemModel(1,"Dashboard", R.drawable.ic_dashboard),
-            NavigationItemModel(2,"Inbox", R.drawable.ic_inbox),
-            NavigationItemModel(3,"Notifications", R.drawable.ic_notif),
-            NavigationItemModel(4,"Calendar", R.drawable.ic_calendar),
-            NavigationItemModel(5,"Statistics", R.drawable.ic_statistics),
-            NavigationItemModel(6,"Settings", R.drawable.ic_settings)
+            NavigationItemModel(1,"Dashboard", R.drawable.ic_dashboard, 20),
+            NavigationItemModel(2,"Inbox", R.drawable.ic_inbox, 20),
+            NavigationItemModel(3,"Notifications", R.drawable.ic_notif, null),
+            NavigationItemModel(4,"Calendar", R.drawable.ic_calendar, null),
+            NavigationItemModel(5,"Statistics", R.drawable.ic_statistics, null),
+            NavigationItemModel(6,"Settings", R.drawable.ic_settings, null)
         )
 
         val adapter = DrawerAdapter()

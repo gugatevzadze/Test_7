@@ -18,6 +18,7 @@ class DrawerAdapter: ListAdapter<NavigationItemModel, DrawerAdapter.ViewHolder>(
             with(binding) {
                 itemIcon.setImageResource(item.icon)
                 itemTitle.text = item.title
+                itemNotifications.text = item.notifications?.toString()
             }
         }
     }
