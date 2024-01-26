@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/dashboardFragment">
+
+    <fragment
+        android:id="@+id/inboxFragment"
+        android:name="com.example.test_7.presentation.screen.inbox.InboxFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_inbox" />
+
+    <fragment
+        android:id="@+id/dashboardFragment"
+        android:name="com.example.test_7.presentation.screen.dashboard.DashboardFragment"
+        android:label="fragment_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/notificationFragment"
+        android:name="com.example.test_7.presentation.screen.notifications.NotificationsFragment"
+        android:label="fragment_notification"
+        tools:layout="@layout/fragment_notification" />
+    <fragment
+        android:id="@+id/calendarFragment"
+        android:name="com.example.test_7.presentation.screen.calendar.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.test_7.presentation.screen.settings.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/statisticsFragment"
+        android:name="com.example.test_7.presentation.screen.statistics.StatisticsFragment"
+        android:label="fragment_statistics"
+        tools:layout="@layout/fragment_statistics" />
+</navigation>
