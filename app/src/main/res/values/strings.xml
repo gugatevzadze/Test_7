@@ -14,4 +14,6 @@
     <string name="brand_name">Fyneen</string>
     <string name="placeholder_for_name">Placeholder for Name</string>
     <string name="placeholder_for_email">Placeholder for Email</string>
+    <string name="personal">Personal</string>
+    <string name="business">Business</string>
 </resources>

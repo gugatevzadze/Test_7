@@ -19,6 +19,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:layout_marginStart="10dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/poppins"
         app:layout_constraintStart_toEndOf="@id/itemIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -27,9 +29,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/notif_shape"
-        android:paddingHorizontal="5dp"
-        android:paddingVertical="2dp"
+        android:paddingHorizontal="6dp"
+        android:textSize="16sp"
         android:textColor="@color/white"
+        android:fontFamily="@font/poppins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
