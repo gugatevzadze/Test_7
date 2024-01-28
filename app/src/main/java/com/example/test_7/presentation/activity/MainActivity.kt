@@ -5,15 +5,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.test_7.R
 import com.example.test_7.R.drawable
 import com.example.test_7.databinding.ActivityMainBinding
 import com.example.test_7.databinding.NavHeaderMainBinding
 import com.example.test_7.presentation.model.NavigationItemModel
 import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     private lateinit var drawerLayout: DrawerLayout
@@ -40,7 +42,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setupRecyclerView() {
-        val adapter = DrawerAdapter()
+        val adapter = DrawerAdapter(
+            onItemClick = { item ->
+                when (item.id) {
+                    1 -> navigateTo(R.id.dashboardFragment)
+                    2 -> navigateTo(R.id.inboxFragment)
+                    3 -> navigateTo(R.id.notificationFragment)
+                    4 -> navigateTo(R.id.calendarFragment)
+                    5 -> navigateTo(R.id.statisticsFragment)
+                    6 -> navigateTo(R.id.settingsFragment)
+                }
+                drawerLayout.closeDrawer(GravityCompat.START)
+            }
+        )
 
         val headerBinding = NavHeaderMainBinding.bind(binding.navView.getHeaderView(0))
         val recyclerView = headerBinding.recyclerViewForList
@@ -48,6 +62,11 @@ class MainActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
         adapter.submitList(getNavigationItems())
+    }
+    private fun navigateTo(id: Int) {
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
+        val navController = navHostFragment.navController
+        navController.navigate(id)
     }
 
     private fun getNavigationItems() = listOf(

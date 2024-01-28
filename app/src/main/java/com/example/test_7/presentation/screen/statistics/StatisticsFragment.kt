@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.test_7.R
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class StatisticsFragment : Fragment() {
 
 }

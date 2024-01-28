@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:gravity="center"
         android:textSize="20sp"
+        android:textColor="@color/black"
         android:text="This is Inbox Fragment"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
