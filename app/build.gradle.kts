@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("kapt")
 }
 
 android {
@@ -54,6 +55,17 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     //splash screen api
     implementation("androidx.core:core-splashscreen:1.0.1")
-    //glide
-    implementation("com.github.bumptech.glide:glide:4.16.0")
+    //datastore
+    implementation("androidx.datastore:datastore-preferences:1.0.0")
+    //hilt
+    implementation("com.google.dagger:hilt-android:2.50")
+    kapt("com.google.dagger:hilt-android-compiler:2.50")
+    //navgraph
+    implementation("androidx.navigation:navigation-fragment-ktx:2.7.6")
+    implementation("androidx.navigation:navigation-ui-ktx:2.7.6")
+    //circle image view
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+}
+kapt {
+    correctErrorTypes = true
 }

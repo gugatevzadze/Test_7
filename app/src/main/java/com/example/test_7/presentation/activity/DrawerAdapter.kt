@@ -1,6 +1,7 @@
-package com.example.test_7.presentation
+package com.example.test_7.presentation.activity
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -8,17 +9,24 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.test_7.databinding.ListItemLayoutBinding
 import com.example.test_7.presentation.model.NavigationItemModel
 
-class DrawerAdapter: ListAdapter<NavigationItemModel, DrawerAdapter.ViewHolder>(NavigationItemModelDiffCallback()) {
+class DrawerAdapter: ListAdapter<NavigationItemModel, DrawerAdapter.ViewHolder>(
+    NavigationItemModelDiffCallback()
+) {
 
 
     inner class ViewHolder(private val binding: ListItemLayoutBinding ) : RecyclerView.ViewHolder(binding.root) {
 
 
         fun bind(item: NavigationItemModel){
-            with(binding) {
-                itemIcon.setImageResource(item.icon)
+            with(binding){
                 itemTitle.text = item.title
-                itemNotifications.text = item.notifications?.toString()
+                itemIcon.setImageResource(item.icon)
+                if (item.notifications != null){
+                    itemNotifications.text = item.notifications.toString()
+                    itemNotifications.visibility = View.VISIBLE
+                } else {
+                    itemNotifications.visibility = View.GONE
+                }
             }
         }
     }

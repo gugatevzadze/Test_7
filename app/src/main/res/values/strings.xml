@@ -11,4 +11,7 @@
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
     <string name="dark_mode">Dark Mode</string>
+    <string name="brand_name">Fyneen</string>
+    <string name="placeholder_for_name">Placeholder for Name</string>
+    <string name="placeholder_for_email">Placeholder for Email</string>
 </resources>
